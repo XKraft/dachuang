@@ -109,6 +109,6 @@ void write_to_deque(int _num, unsigned char* buf)
     {
 //	_buf = serialGetchar(fd);
 //	if(_buf != -1)
-            Qbuf.push_back(_buf);
+            Qbuf.push_back(buf[i]);
     }
 }
