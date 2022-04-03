@@ -10,9 +10,9 @@ int fd;
 unsigned char rbuf[MAVLINK_MAX_PACKET_LEN];
 // int len = 0;
 deque<unsigned char> Qbuf;
-PI_THREAD (readThread);
-void write_to_deque(int _num, unsigned char* buf);
-// void serial_read();
+// PI_THREAD (readThread);
+// void write_to_deque(int _num, unsigned char* buf);
+void serial_read();
 
 int main()
 {
@@ -34,15 +34,15 @@ int main()
         printf("error1:unable to open serial\n");
         return -1;
     }
-    if(piThreadCreate(readThread))
-    {
-        printf("error2:unenble to creat readThread\n");
-        return -3;
-    }
+    // if(piThreadCreate(readThread))
+    // {
+    //     printf("error2:unenble to creat readThread\n");
+    //     return -3;
+    // }
     
     while(1)
     {
-        // serial_read();
+        serial_read();
         //piLock(0);
 	    if(Qbuf.size() != 0)
         {
@@ -77,40 +77,42 @@ int main()
     return 0;
 }
 
-PI_THREAD (readThread)
+// PI_THREAD (readThread)
+// {
+//     while(1)
+//     {
+//         int size = serialDataAvail(fd);
+//         if( size> 0)
+//         {
+//             //piLock(0);
+//             printf("(%d) ", size);fflush(stdout);
+//             size = read(fd, rbuf, 8);
+//             printf("[%d] ", size);fflush(stdout);
+// 	        write_to_deque(size, rbuf);
+//             //piUnlock(0);
+//         }
+//     }
+// }
+
+// void write_to_deque(int _num, unsigned char* buf)
+// {
+//     for(int i = 0; i < _num; ++i)
+//     {
+//             Qbuf.push_back(rbuf[i]);
+//     }
+// }
+
+void serial_read()
 {
-    while(1)
+    int size = serialDataAvail(fd);
+    if(size > 0)
     {
-        int size = serialDataAvail(fd);
-        if( size> 0)
+        printf("(%d) ", size);fflush(stdout);
+        size = read(fd, rbuf, 8);
+        printf("[%d] ", size);fflush(stdout);
+        for(int i = 0; i < size; ++i)
         {
-            //piLock(0);
-            printf("(%d) ", size);fflush(stdout);
-            size = read(fd, rbuf, 8);
-            printf("[%d] ", size);fflush(stdout);
-	        write_to_deque(size, rbuf);
-            //piUnlock(0);
+            Qbuf.push_back(rbuf[i]);
         }
     }
 }
-
-void write_to_deque(int _num, unsigned char* buf)
-{
-    for(int i = 0; i < _num; ++i)
-    {
-            Qbuf.push_back(rbuf[i]);
-    }
-}
-
-// void serial_read()
-// {
-//     len = serialDataAvail(fd);
-//     if(len > 0)
-//     {
-//         len = read(fd, rbuf, len);
-//     }
-//     for(int i = 0; i < len; ++i)
-//     {
-//         Qbuf.push_back(rbuf[i]);
-//     }
-// }
