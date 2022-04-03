@@ -7,10 +7,10 @@
 using namespace std;
 
 int fd;
-unsigned char rbuf[MAVLINK_MAX_PACKET_LEN];
+//unsigned char rbuf;
 deque<unsigned char> Qbuf;
-PI_THREAD (readThread);
-void write_to_deque(int _num, unsigned char* buf);
+//PI_THREAD (readThread);
+//void write_to_deque(int _num, unsigned char* buf);
 
 int main()
 {
@@ -40,6 +40,7 @@ int main()
     
     while(1)
     {
+        serial_read();
         //piLock(0);
 	    if(Qbuf.size() != 0)
         {
@@ -74,38 +75,44 @@ int main()
     return 0;
 }
 
-PI_THREAD (readThread)
-{
-    printf("hello pi1!\n");
-    while(1)
-    {
-        int size = serialDataAvail(fd);
-        //printf("%d\n", size);
-        //printf("%d ", size);fflush(stdout);
-        if( size> 0)
-        {
-            //piLock(0);
-            printf("(%d) ", size);fflush(stdout);
-            // rbuf = serialGetchar(fd);
-            //printf("%d\n", size);
-            size = read(fd, rbuf, size);
-            //printf("[%d] ", rbuf[0]);fflush(stdout);
-            printf("[%d] ", size);fflush(stdout);
-            //printf("%d\n", size);
-	    write_to_deque(size, rbuf);
-            //piUnlock(0);
-            //printf("%x %x %x %x ", rbuf[0], rbuf[1], rbuf[2], rbuf[3]);fflush(stdout);
-        }
-    }
-}
+// PI_THREAD (readThread)
+// {
+//     printf("hello pi1!\n");
+//     while(1)
+//     {
+//         int size = serialDataAvail(fd);
+//         //printf("%d\n", size);
+//         //printf("%d ", size);fflush(stdout);
+//         if( size> 0)
+//         {
+//             //piLock(0);
+//             printf("(%d) ", size);fflush(stdout);
+//             // rbuf = serialGetchar(fd);
+//             //printf("%d\n", size);
+//             size = read(fd, rbuf, size);
+//             //printf("[%d] ", rbuf[0]);fflush(stdout);
+//             printf("[%d] ", size);fflush(stdout);
+//             //printf("%d\n", size);
+// 	    write_to_deque(size, rbuf);
+//             //piUnlock(0);
+//             //printf("%x %x %x %x ", rbuf[0], rbuf[1], rbuf[2], rbuf[3]);fflush(stdout);
+//         }
+//     }
+// }
 
-void write_to_deque(int _num, unsigned char* buf)
+// void write_to_deque(int _num, unsigned char* buf)
+// {
+//     //int _buf = -1;
+//     for(int i = 0; i < _num; ++i)
+//     {
+// //	_buf = serialGetchar(fd);
+// //	if(_buf != -1)
+//             Qbuf.push_back(buf[i]);
+//     }
+// }
+
+void serial_read()
 {
-    //int _buf = -1;
-    for(int i = 0; i < _num; ++i)
-    {
-//	_buf = serialGetchar(fd);
-//	if(_buf != -1)
-            Qbuf.push_back(buf[i]);
-    }
+    if(serialDataAvail(fd))
+        Qbuf.push_back(serialGetchar(fd));
 }
