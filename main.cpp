@@ -86,7 +86,7 @@ PI_THREAD (readThread)
         {
             //piLock(0);
             printf("(%d) ", size);fflush(stdout);
-            size = read(fd, rbuf, size);
+            size = read(fd, rbuf, 8);
             printf("[%d] ", size);fflush(stdout);
 	        write_to_deque(size, rbuf);
             //piUnlock(0);
