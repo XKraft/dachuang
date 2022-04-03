@@ -7,10 +7,12 @@
 using namespace std;
 
 int fd;
-//unsigned char rbuf;
+unsigned char rbuf[MAVLINK_MAX_PACKET_LEN];
+int len = 0;
 deque<unsigned char> Qbuf;
 //PI_THREAD (readThread);
 //void write_to_deque(int _num, unsigned char* buf);
+void serial_read();
 
 int main()
 {
@@ -32,11 +34,11 @@ int main()
         printf("error1:unable to open serial\n");
         return -1;
     }
-    if(piThreadCreate(readThread))
-    {
-        printf("error2:unenble to creat readThread\n");
-        return -3;
-    }
+    // if(piThreadCreate(readThread))
+    // {
+    //     printf("error2:unenble to creat readThread\n");
+    //     return -3;
+    // }
     
     while(1)
     {
@@ -113,6 +115,13 @@ int main()
 
 void serial_read()
 {
-    if(serialDataAvail(fd))
-        Qbuf.push_back(serialGetchar(fd));
+    len = serialDataAvail(fd)
+    if(len > 0)
+    {
+        len = read(fd, rbuf, len);
+    }
+    for(int i = 0; i < len; ++i)
+    {
+        Qbuf.push_back(buf[i]);
+    }
 }
