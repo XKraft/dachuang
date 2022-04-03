@@ -40,16 +40,13 @@ int main()
     
     while(1)
     {
-        
-        piLock(0);
-        //printf("%d", Qbuf.size());
+        //piLock(0);
 	    if(Qbuf.size() != 0)
         {
-            //printf("???\n");
             printf("%x ", Qbuf.front());fflush(stdout);
             if(mavlink_parse_char(MAVLINK_COMM_0, Qbuf.front(), &msg, &status))
             {
-                piUnlock(0);	            
+                //piUnlock(0);	            
 	            Qbuf.pop_front();
                 printf("msgid:%d stx:%x\n", msg.msgid, msg.magic);
                 if(msg.msgid == MAVLINK_MSG_ID_HEARTBEAT)
@@ -66,7 +63,7 @@ int main()
             }
             else
             {
-                piUnlock(0);
+                //piUnlock(0);
 	            Qbuf.pop_front();
             }
 	    }
@@ -87,16 +84,16 @@ PI_THREAD (readThread)
         //printf("%d ", size);fflush(stdout);
         if( size> 0)
         {
-            piLock(0);
+            //piLock(0);
             printf("(%d) ", size);fflush(stdout);
             // rbuf = serialGetchar(fd);
-            printf("%d\n", size);
+            //printf("%d\n", size);
             size = read(fd, rbuf, size);
             //printf("[%d] ", rbuf[0]);fflush(stdout);
             printf("[%d] ", size);fflush(stdout);
             //printf("%d\n", size);
 	    write_to_deque(size, rbuf);
-            piUnlock(0);
+            //piUnlock(0);
             //printf("%x %x %x %x ", rbuf[0], rbuf[1], rbuf[2], rbuf[3]);fflush(stdout);
         }
     }
