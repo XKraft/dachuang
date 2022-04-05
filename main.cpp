@@ -46,7 +46,7 @@ int main()
 
     mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 8, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    serialPrintf(fd, BufSend);
+    write(fd, BufSend, BufSendLen);
 
     while(1)
     {
