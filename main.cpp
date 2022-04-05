@@ -18,7 +18,11 @@ int main()
 {
     
     mavlink_message_t msg;
+    mavlink_message_t _msg;
     mavlink_status_t status;
+    unsigned char BufSend[MAVLINK_MAX_PACKET_LEN];
+    int BufSendLen = 0;
+
     printf("hello pi!\n");
 
     if(wiringPiSetup() < 0)
@@ -39,7 +43,11 @@ int main()
     //     printf("error2:unenble to creat readThread\n");
     //     return -3;
     // }
-    
+
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 8, 1);
+	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    serialPrintf(fd, BufSend);
+
     while(1)
     {
         serial_read();
@@ -59,7 +67,10 @@ int main()
 		            mavlink_msg_heartbeat_decode(&msg, &msg_heartbeat);
 		            printf("%x %x %x %x %x %x\n", msg_heartbeat.custom_mode, msg_heartbeat.type, msg_heartbeat.autopilot, msg_heartbeat.base_mode, msg_heartbeat.system_status, msg_heartbeat.mavlink_version);
                 }
-                else
+                else if(msg.msgid == MAVLINK_MSG_ID_ATTITUDE)
+                {
+                     printf("attitude!\n");
+                }
                 {
                     printf("other msg\n");
                 }
