@@ -46,7 +46,16 @@ int main()
 
     mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 8, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    write(fd, BufSend, BufSendLen);
+    if(write(fd, BufSend, BufSendLen))
+    {
+        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+    }
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_RAW_IMU, 8, 1);
+	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    if(write(fd, BufSend, BufSendLen))
+    {
+        cout << "Serial Write successfully! MAVLINK_MSG_ID_RAW_IMU" << endl;
+    }
 
     while(1)
     {
@@ -69,10 +78,11 @@ int main()
                 }
                 else if(msg.msgid == MAVLINK_MSG_ID_ATTITUDE)
                 {
-                     printf("attitude!\n");
+                    printf("attitude!\n");
                 }
+                else if(msg.msgid == MAVLINK_MSG_ID_RAW_IMU)
                 {
-                    printf("other msg\n");
+                    printf("raw_imu\n");
                 }
             }
             else
