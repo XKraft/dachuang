@@ -136,4 +136,8 @@ void serial_read()
             Qbuf.push_back(rbuf[i]);
         }
     }
+    else
+    {
+        cout << "no data!" << endl;
+    }
 }
