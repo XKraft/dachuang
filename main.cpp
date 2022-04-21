@@ -39,7 +39,7 @@ int main()
         return -1;
     }
 
-    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 5, 1);
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     if(write(fd, BufSend, BufSendLen))
     {
@@ -74,7 +74,7 @@ int main()
                 printf("msgid:%d stx:%x\n", msg.msgid, msg.magic);
                 if(msg.msgid == MAVLINK_MSG_ID_HEARTBEAT)
                 {
-                    printf("heartbeat!\n");
+                    printf("heartbeat! ");
 	           	    mavlink_heartbeat_t msg_heartbeat;
 		            mavlink_msg_heartbeat_decode(&msg, &msg_heartbeat);
 		            printf("%x %x %x %x %x %x\n", msg_heartbeat.custom_mode, msg_heartbeat.type, msg_heartbeat.autopilot, msg_heartbeat.base_mode, msg_heartbeat.system_status, msg_heartbeat.mavlink_version);
@@ -110,7 +110,7 @@ PI_THREAD (readThread)
         {
             //piLock(0);
             printf("(%d) ", size);fflush(stdout);
-            size = read(fd, rbuf, size);
+            size = read(fd, rbuf, 8);
             printf("[%d] ", size);fflush(stdout);
 	        write_to_deque(size, rbuf);
             //piUnlock(0);
