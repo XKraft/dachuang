@@ -38,24 +38,27 @@ int main()
         printf("error1:unable to open serial\n");
         return -1;
     }
+
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 8, 1);
+	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    if(write(fd, BufSend, BufSendLen))
+    {
+        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+    }
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_RAW_IMU, 8, 1);
+	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    if(write(fd, BufSend, BufSendLen))
+    {
+        cout << "Serial Write successfully! MAVLINK_MSG_ID_RAW_IMU" << endl;
+    }
+
     if(piThreadCreate(readThread))
     {
         printf("error2:unenble to creat readThread\n");
         return -3;
     }
 
-    // mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_SET_ATTITUDE_TARGET, 8, 1);
-	// BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    // if(write(fd, BufSend, BufSendLen))
-    // {
-    //     cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
-    // }
-    // mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_RAW_IMU, 8, 1);
-	// BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    // if(write(fd, BufSend, BufSendLen))
-    // {
-    //     cout << "Serial Write successfully! MAVLINK_MSG_ID_RAW_IMU" << endl;
-    // }
+
 
     while(1)
     {
@@ -107,7 +110,7 @@ PI_THREAD (readThread)
         {
             //piLock(0);
             printf("(%d) ", size);fflush(stdout);
-            size = read(fd, rbuf, 8);
+            size = read(fd, rbuf, size);
             printf("[%d] ", size);fflush(stdout);
 	        write_to_deque(size, rbuf);
             //piUnlock(0);
