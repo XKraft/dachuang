@@ -3,7 +3,7 @@
 #include<wiringPi.h>
 #include<wiringSerial.h>
 #include <unistd.h>
-#include"../head/debug.h"
+#include"./head/debug.h"
 
 
 int fd;
