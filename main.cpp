@@ -107,7 +107,12 @@ int main()
                     break;
                 case MAVLINK_MSG_ID_ATTITUDE: cout << "attitude!" << endl;
                     break;
-                case MAVLINK_MSG_ID_RAW_IMU: cout << "raw_imu" << endl;
+                case MAVLINK_MSG_ID_RAW_IMU: cout << "raw_imu" << endl;break;
+                case MAVLINK_MSG_ID_COMMAND_ACK: 
+                    cout << "commond ack! ";
+                    mavlink_command_ack_t msg_command_ack;
+                    mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
+                    cout << "command:" << msg_command_ack.command << " result:" << msg_command_ack.result << endl; break;
                 default: cout << "other message" << endl;
                     break;
                 }
