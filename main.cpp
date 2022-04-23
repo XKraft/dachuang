@@ -112,7 +112,7 @@ int main()
                     cout << "commond ack! ";
                     mavlink_command_ack_t msg_command_ack;
                     mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
-                    cout << "command:" << msg_command_ack.command << " result:" << msg_command_ack.result << "!" << endl; break;
+                    cout << "command:" << msg_command_ack.command << msg_command_ack.result << " result:" << msg_command_ack.result << "!" << endl; break;
                 default: cout << "other message" << endl;
                     break;
                 }
