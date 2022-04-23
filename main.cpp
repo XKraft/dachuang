@@ -112,7 +112,14 @@ int main()
                     cout << "commond ack! ";
                     mavlink_command_ack_t msg_command_ack;
                     mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
-                    cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl; break;
+                    cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;
+                    mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_REQUEST_MESSAGE, 0, MAVLINK_MSG_ID_ATTITUDE, 0, 0, 0, 0, 0, 1);
+                    BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+                    printf_packed_msg(BufSend, BufSendLen);
+                    if(write(fd, BufSend, BufSendLen))
+                    {
+                        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+                    } break;
                 default: cout << "other message" << endl;
                     break;
                 }
