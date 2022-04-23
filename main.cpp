@@ -39,17 +39,24 @@ int main()
         return -1;
     }
 
-    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
-	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    // mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
+	// BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    // if(write(fd, BufSend, BufSendLen))
+    // {
+    //     cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+    // }
+    // mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_RAW_IMU, 5, 1);
+	// BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    // if(write(fd, BufSend, BufSendLen))
+    // {
+    //     cout << "Serial Write successfully! MAVLINK_MSG_ID_RAW_IMU" << endl;
+    // }
+    //请求飞控发送指定消息
+    mavlink_msg_command_long_pack(1, 1, ,&_msg, MAV_CMD_SET_MESSAGE_INTERVAL, 0, MAVLINK_MSG_ID_ATTITUDE, 0, 0);
+    BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     if(write(fd, BufSend, BufSendLen))
     {
         cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
-    }
-    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_RAW_IMU, 5, 1);
-	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    if(write(fd, BufSend, BufSendLen))
-    {
-        cout << "Serial Write successfully! MAVLINK_MSG_ID_RAW_IMU" << endl;
     }
 
     if(piThreadCreate(readThread))
@@ -71,7 +78,7 @@ int main()
             {
                 //piUnlock(0);	            
 	            Qbuf.pop_front();
-                printf("msgid:%d stx:%x\n", msg.msgid, msg.magic);
+                printf("msgid:%d stx:%x   ", msg.msgid, msg.magic);
                 if(msg.msgid == MAVLINK_MSG_ID_HEARTBEAT)
                 {
                     printf("heartbeat! ");
