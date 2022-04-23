@@ -73,6 +73,12 @@ int main()
     {
         cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
     }
+    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
+	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    if(write(fd, BufSend, BufSendLen))
+    {
+        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+    }
 
     while(1)
     {
