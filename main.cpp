@@ -66,7 +66,7 @@ int main()
     // {
     //     cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
     // }
-    mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_SET_MESSAGE_INTERVAL, 0, MAVLINK_MSG_ID_ATTITUDE, 100, 0, 0, 0, 0, 1);
+    mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_SET_MESSAGE_INTERVAL, 0, MAVLINK_MSG_ID_ATTITUDE, 500, 0, 0, 0, 0, 1);
     BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     printf_packed_msg(BufSend, BufSendLen);
     if(write(fd, BufSend, BufSendLen))
