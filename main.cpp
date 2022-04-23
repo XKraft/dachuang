@@ -59,13 +59,13 @@ int main()
         return -3;
     }
 
-    mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_REQUEST_MESSAGE, 0, MAVLINK_MSG_ID_ATTITUDE, 0, 0, 0, 0, 0, 1);
-    BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    printf_packed_msg(BufSend, BufSendLen);
-    if(write(fd, BufSend, BufSendLen))
-    {
-        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
-    }
+    // mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_REQUEST_MESSAGE, 0, MAVLINK_MSG_ID_ATTITUDE, 0, 0, 0, 0, 0, 1);
+    // BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
+    // printf_packed_msg(BufSend, BufSendLen);
+    // if(write(fd, BufSend, BufSendLen))
+    // {
+    //     cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
+    // }
     mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_SET_MESSAGE_INTERVAL, 0, MAVLINK_MSG_ID_ATTITUDE, 100, 0, 0, 0, 0, 1);
     BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     printf_packed_msg(BufSend, BufSendLen);
@@ -86,21 +86,6 @@ int main()
                 //piUnlock(0);	            
 	            Qbuf.pop_front();
                 printf("msgid:%d stx:%x   ", msg.msgid, msg.magic);
-                // if(msg.msgid == MAVLINK_MSG_ID_HEARTBEAT)
-                // {
-                //     printf("heartbeat! ");
-	           	//     mavlink_heartbeat_t msg_heartbeat;
-		        //     mavlink_msg_heartbeat_decode(&msg, &msg_heartbeat);
-		        //     printf("%x %x %x %x %x %x\n", msg_heartbeat.custom_mode, msg_heartbeat.type, msg_heartbeat.autopilot, msg_heartbeat.base_mode, msg_heartbeat.system_status, msg_heartbeat.mavlink_version);
-                // }
-                // if(msg.msgid == MAVLINK_MSG_ID_ATTITUDE)
-                // {
-                //     printf("attitude!\n");
-                // }
-                // if(msg.msgid == MAVLINK_MSG_ID_RAW_IMU)
-                // {
-                //     printf("raw_imu\n");
-                // }
                 switch (msg.msgid)
                 {
                 case MAVLINK_MSG_ID_HEARTBEAT: cout << "heartbeat!" << endl;
@@ -112,14 +97,7 @@ int main()
                     cout << "commond ack! ";
                     mavlink_command_ack_t msg_command_ack;
                     mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
-                    cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;
-                    mavlink_msg_command_long_pack(100, 200, &_msg, 1, 1, MAV_CMD_REQUEST_MESSAGE, 0, MAVLINK_MSG_ID_ATTITUDE, 0, 0, 0, 0, 0, 1);
-                    BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-                    printf_packed_msg(BufSend, BufSendLen);
-                    if(write(fd, BufSend, BufSendLen))
-                    {
-                        cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
-                    } break;
+                    cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;break;
                 default: cout << "other message" << endl;
                     break;
                 }
