@@ -1,2 +1,2 @@
-main:main.cpp ./rsc/debug.cpp
-	g++ -o main main.cpp ./rsc/debug.cpp -lwiringPi
+main:main.cpp ./src/*.cpp
+	g++ -o main main.cpp ./rsc/*.cpp -lwiringPi
