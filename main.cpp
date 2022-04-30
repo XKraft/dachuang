@@ -20,22 +20,24 @@ int main()
     unsigned char BufSend[MAVLINK_MAX_PACKET_LEN];
     int BufSendLen = 0;
 
+    //创建线程
     if(piThreadCreate(readThread))
     {
         printf("error2:unenble to creat readThread\n");
         return -3;
     }
 
+    //向飞控请求发送三个角度的数据
     mavlink_msg_request_data_stream_pack(100, 200, &_msg, 1, MAV_COMP_ID_ALL, MAVLINK_MSG_ID_ATTITUDE, 200, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
-    if(Serial.WriteSerialBytes(BufSendLen, BufSend))
+    if(serial.WriteSerialBytes(BufSendLen, BufSend))
     {
         cout << "Serial Write successfully! request the message : MAVLINK_MSG_ID_ATTITUDE" << endl;
     }
 
     while(1)
     {
-	    if(Qbuf.size() != 0)
+	    if(serial.GetQbufNumber != 0)
         {
             piLock(0);
             byte = serial.GetQbufByte();
@@ -46,8 +48,6 @@ int main()
             }
 	    }
     }
-    
-    serialClose(fd);
 
     return 0;
 }
@@ -57,14 +57,14 @@ PI_THREAD (readThread)
     while(1)
     {
         piLock(0);
-        serial.ReadSerialBytes();
+        serial.ReadSerialByte();
         piUnlock(0);
     }
 }
 
 void mavlink_decode(uint8_t msgid)
 {
-    switch (msg.msgid)
+    switch (msgid)
     {
         case MAVLINK_MSG_ID_ATTITUDE: 
             mavlink_attitude_t attitude_msg;

@@ -22,6 +22,7 @@ Serial::Serial()
 Serial::~Serial()
 {
     Qbuf.clear();
+    serialClose(serialfd);
 }
 
 //得到串口缓冲区存在的字符数

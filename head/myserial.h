@@ -17,7 +17,7 @@ class Serial
     bool WriteSerialBytes(int number, uint8_t* buf);
     uint8_t GetQbufByte();
     int GetQbufNumber();
-    
+
     protected:
     int serialfd;
     std::deque<uint8_t> Qbuf;
