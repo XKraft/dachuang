@@ -22,6 +22,7 @@ int main()
     mavlink_status_t status;
     unsigned char BufSend[MAVLINK_MAX_PACKET_LEN];
     int BufSendLen = 0;
+    int chan = 0;
 
     printf("hello pi!\n");
 
@@ -73,7 +74,8 @@ int main()
     {
         cout << "Serial Write successfully! MAVLINK_MSG_ID_SET_ATTITUDE_TARGET" << endl;
     }
-    mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
+    //mavlink_msg_request_data_stream_pack(1, 1, &_msg, 1, 1, MAVLINK_MSG_ID_ATTITUDE, 5, 1);
+    mavlink_msg_request_data_stream_pack_chan(0, 01 chan, &_msg, 1, 1, 500, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     if(write(fd, BufSend, BufSendLen))
     {
