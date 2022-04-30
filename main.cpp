@@ -7,19 +7,17 @@
 #include"./head/myserial.h"
 
 Serial serial; 
-unsigned char rbuf[MAVLINK_MAX_PACKET_LEN];
+mavlink_message_t msg, _msg;
+mavlink_status_t status;
+uint8_t byte;
+unsigned char BufSend[MAVLINK_MAX_PACKET_LEN];
+int BufSendLen = 0;
+
 PI_THREAD (readThread);
 void mavlink_decode(uint8_t msgid);
 
 int main()
 {
-    
-    mavlink_message_t msg, _msg;
-    mavlink_status_t status;
-    uint8_t byte;
-    unsigned char BufSend[MAVLINK_MAX_PACKET_LEN];
-    int BufSendLen = 0;
-
     //创建线程
     if(piThreadCreate(readThread))
     {
@@ -37,7 +35,7 @@ int main()
 
     while(1)
     {
-	    if(serial.GetQbufNumber != 0)
+	    if(serial.GetQbufNumber() != 0)
         {
             piLock(0);
             byte = serial.GetQbufByte();
