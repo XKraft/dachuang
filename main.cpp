@@ -88,19 +88,19 @@ int main()
         //piLock(0);
 	    if(Qbuf.size() != 0)
         {
-            printf("%x ", Qbuf.front());fflush(stdout);
+            //printf("%x ", Qbuf.front());fflush(stdout);
             if(mavlink_parse_char(MAVLINK_COMM_0, Qbuf.front(), &msg, &status))
             {
                 //piUnlock(0);	            
 	            Qbuf.pop_front();
-                printf("msgid:%d stx:%x   ", msg.msgid, msg.magic);
+                //printf("msgid:%d stx:%x   ", msg.msgid, msg.magic);
                 switch (msg.msgid)
                 {
                 case MAVLINK_MSG_ID_HEARTBEAT: 
                     break;
                 case MAVLINK_MSG_ID_ATTITUDE: 
                     mavlink_attitude_t attitude_msg;
-                    mavlink_msg_altitude_decode(&msg, &altitude_msg);
+                    mavlink_msg_altitude_decode(&msg, &attitude_msg);
                     cout << "attitude: pitch:" << attitude_msg.pitch << " roll:" << attitude_msg.roll << " yaw:" << attitude_msg.yaw << endl;
                     break;
                 case MAVLINK_MSG_ID_RAW_IMU: 
@@ -134,9 +134,9 @@ PI_THREAD (readThread)
         if( size> 0)
         {
             //piLock(0);
-            printf("(%d) ", size);fflush(stdout);
+            //printf("(%d) ", size);fflush(stdout);
             size = read(fd, rbuf, 8);
-            printf("[%d] ", size);fflush(stdout);
+            //printf("[%d] ", size);fflush(stdout);
 	        write_to_deque(size, rbuf);
             //piUnlock(0);
         }
