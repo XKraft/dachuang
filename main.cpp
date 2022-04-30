@@ -106,7 +106,7 @@ int main()
                     mavlink_command_ack_t msg_command_ack;
                     mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
                     cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;break;
-                default: cout << "other message" << endl;
+                default: 
                     break;
                 }
             }
