@@ -96,16 +96,19 @@ int main()
                 printf("msgid:%d stx:%x   ", msg.msgid, msg.magic);
                 switch (msg.msgid)
                 {
-                case MAVLINK_MSG_ID_HEARTBEAT: cout << "heartbeat!" << endl;
+                case MAVLINK_MSG_ID_HEARTBEAT: 
                     break;
-                case MAVLINK_MSG_ID_ATTITUDE: cout << "attitude!" << endl;
+                case MAVLINK_MSG_ID_ATTITUDE: 
+                    mavlink_attitude_t attitude_msg;
+                    mavlink_msg_altitude_decode(&msg, &altitude_msg);
+                    cout << "attitude: pitch:" << attitude_msg.pitch << " roll:" << attitude_msg.roll << " yaw:" << attitude_msg.yaw << endl;
                     break;
-                case MAVLINK_MSG_ID_RAW_IMU: cout << "raw_imu" << endl;break;
-                case MAVLINK_MSG_ID_COMMAND_ACK: 
-                    cout << "commond ack! ";
-                    mavlink_command_ack_t msg_command_ack;
-                    mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
-                    cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;break;
+                case MAVLINK_MSG_ID_RAW_IMU: 
+                // case MAVLINK_MSG_ID_COMMAND_ACK: 
+                //     cout << "commond ack! ";
+                //     mavlink_command_ack_t msg_command_ack;
+                //     mavlink_msg_command_ack_decode(&msg, &msg_command_ack);
+                //     cout << "command:" << (int)msg_command_ack.command  << " result:" << (int)msg_command_ack.result << "!" << endl;break;
                 default: 
                     break;
                 }
