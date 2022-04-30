@@ -100,7 +100,7 @@ int main()
                     break;
                 case MAVLINK_MSG_ID_ATTITUDE: 
                     mavlink_attitude_t attitude_msg;
-                    mavlink_msg_altitude_decode(&msg, &attitude_msg);
+                    mavlink_msg_attitude_decode(&msg, &attitude_msg);
                     cout << "attitude: pitch:" << attitude_msg.pitch << " roll:" << attitude_msg.roll << " yaw:" << attitude_msg.yaw << endl;
                     break;
                 case MAVLINK_MSG_ID_RAW_IMU: 
