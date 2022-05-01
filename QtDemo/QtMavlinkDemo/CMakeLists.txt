@@ -27,10 +27,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include/c_library_v1-master/common)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include/WiringPi-master/wiringPi)
+
 set(PROJECT_SOURCES
         main.cpp
+        myserial.cpp
         mainwindow.cpp
         mainwindow.h
+        myserial.h
         mainwindow.ui
 )
 
@@ -51,3 +57,5 @@ else()
 endif()
 
 target_link_libraries(QtMavlinkDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+

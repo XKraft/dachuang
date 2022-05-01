@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QtMavlinkDemo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QtMavlinkDemo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtMavlinkDemo-Debug-5db7cdf4c30bcf7802eb.json",
+					"name" : "QtMavlinkDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QtMavlinkDemo_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtMavlinkDemo_autogen-Debug-140367bef1f27b2ec81c.json",
+					"name" : "QtMavlinkDemo_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QtMavlinkDemo_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtMavlinkDemo_autogen_timestamp_deps-Debug-7b3d56e2fbdaa968b3ae.json",
+					"name" : "QtMavlinkDemo_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+		"source" : "D:/study/dachuang/dachuang/QtDemo/QtMavlinkDemo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
