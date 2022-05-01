@@ -1,0 +1,4 @@
+/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/rebuild_cache.dir
+/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/edit_cache.dir
+/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir
+/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo_autogen.dir
