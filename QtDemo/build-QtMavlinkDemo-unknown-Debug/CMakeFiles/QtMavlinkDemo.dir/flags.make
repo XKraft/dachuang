@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++-11
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug -I/home/pi/dachuang/QtDemo/QtMavlinkDemo -I/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/QtMavlinkDemo_autogen/include -isystem /usr/include/arm-linux-gnueabihf/qt5 -isystem /usr/include/arm-linux-gnueabihf/qt5/QtWidgets -isystem /usr/include/arm-linux-gnueabihf/qt5/QtGui -isystem /usr/include/arm-linux-gnueabihf/qt5/QtCore -isystem /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++
+CXX_INCLUDES = -I/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug -I/home/pi/dachuang/QtDemo/QtMavlinkDemo -I/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/QtMavlinkDemo_autogen/include -I/home/pi/dachuang/QtDemo/QtMavlinkDemo/include -I/home/pi/dachuang/QtDemo/QtMavlinkDemo/include/c_library_v1-master/common -I/home/pi/dachuang/QtDemo/QtMavlinkDemo/include/WiringPi-master/wiringPi -isystem /usr/include/arm-linux-gnueabihf/qt5 -isystem /usr/include/arm-linux-gnueabihf/qt5/QtWidgets -isystem /usr/include/arm-linux-gnueabihf/qt5/QtGui -isystem /usr/include/arm-linux-gnueabihf/qt5/QtCore -isystem /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++
 
 CXX_FLAGS = -g -fPIC -std=gnu++11
 

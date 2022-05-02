@@ -31,6 +31,10 @@ INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include/c_library_v1-master/common)
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include/WiringPi-master/wiringPi)
 
+#LINK_LIBRARIES("/usr/local/bin/libwiringPi.so.2.70")
+#link_libraries(${PROJECT_SOURCE_DIR}/lib/)
+#link_libraries("/usr/local/bin/libwringPi.so")
+
 set(PROJECT_SOURCES
         main.cpp
         myserial.cpp
@@ -56,6 +60,6 @@ else()
     endif()
 endif()
 
-target_link_libraries(QtMavlinkDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(QtMavlinkDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${PROJECT_SOURCE_DIR}/lib/libwiringPi.so)
 
 

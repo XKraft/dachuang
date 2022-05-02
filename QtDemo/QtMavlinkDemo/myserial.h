@@ -1,20 +1,16 @@
 #ifndef MYSERIAL_H
 #define MYSERIAL_H
 
-#include <QMainWindow>
 #include <wiringPi.h>
 #include <wiringSerial.h>
 #include <mavlink.h>
 #include <iostream>
 #include <deque>
 
-PI_THREAD (readThread);
-
-class MySerial : public QMainWindow
+class MySerial
 {
-    Q_OBJECT
 public:
-    explicit MySerial(QWidget *parent = nullptr);
+    MySerial();
     ~MySerial();
     int GetSerialBufByteNumber();
     void ReadSerialByte();
@@ -24,7 +20,6 @@ public:
     uint8_t GetQbufByte();
     int GetQbufNumber();
     void RequestPixhawkSendMsg();
-signals:
 
 protected:
     int serialfd;

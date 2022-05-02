@@ -236,6 +236,33 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+myserial.o: myserial.cpp.o
+
+.PHONY : myserial.o
+
+# target to build an object file
+myserial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.o
+.PHONY : myserial.cpp.o
+
+myserial.i: myserial.cpp.i
+
+.PHONY : myserial.i
+
+# target to preprocess a source file
+myserial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.i
+.PHONY : myserial.cpp.i
+
+myserial.s: myserial.cpp.s
+
+.PHONY : myserial.s
+
+# target to generate assembly for a file
+myserial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.s
+.PHONY : myserial.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -255,6 +282,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... myserial.o"
+	@echo "... myserial.i"
+	@echo "... myserial.s"
 .PHONY : help
 
 

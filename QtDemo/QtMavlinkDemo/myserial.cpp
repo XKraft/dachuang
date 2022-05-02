@@ -1,7 +1,6 @@
 #include "myserial.h"
 
-MySerial::MySerial(QWidget *parent)
-    : QMainWindow{parent}
+MySerial::MySerial()
 {
     if(wiringPiSetup() < 0)
     {
@@ -90,13 +89,7 @@ int MySerial::GetQbufNumber()
 
 void MySerial::RequestPixhawkSendMsg()
 {
-    if(piThreadCreate(readThread))
-    {
-        std::cout << "erro3:unenble to creat readThread" << std::endl;
-        exit(-3);
-    }
-
-    mavlink_msg_request_data_stream_pack(100, 200, &msg, 1, MAV_COMP_ID_ALL, MAVLINK_MSG_ID_ATTITUDE, 200, 1);
+    mavlink_msg_request_data_stream_pack(100, 200, &msg, 1, MAV_COMP_ID_ALL, MAV_DATA_STREAM_ALL, 200, 1);
     BufSendLen = mavlink_msg_to_send_buffer(BufSend, &msg);
     if(this->WriteSerialBytes(BufSendLen, BufSend))
     {

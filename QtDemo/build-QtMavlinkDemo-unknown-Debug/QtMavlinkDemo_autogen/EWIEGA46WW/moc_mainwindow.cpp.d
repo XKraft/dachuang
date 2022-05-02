@@ -52,10 +52,12 @@
   /usr/include/arm-linux-gnueabihf/c++/10/bits/os_defines.h \
   /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
   /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/QTimer \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qalgorithms.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qarraydata.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasicatomic.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qbytearray.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qbytearraylist.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qchar.h \
@@ -102,6 +104,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qsysinfo.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qsystemdetection.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtcore-config.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtypeinfo.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h \
