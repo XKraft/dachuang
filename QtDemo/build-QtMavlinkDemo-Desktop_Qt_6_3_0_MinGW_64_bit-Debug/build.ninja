@@ -89,9 +89,9 @@ build CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.obj: CXX_COMPILER__QtMavlinkDe
 #############################################
 # Link the executable QtMavlinkDemo.exe
 
-build QtMavlinkDemo.exe: CXX_EXECUTABLE_LINKER__QtMavlinkDemo_Debug CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.obj CMakeFiles/QtMavlinkDemo.dir/main.cpp.obj CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.obj CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.obj | D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Widgets.a D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Gui.a D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Core.a || QtMavlinkDemo_autogen QtMavlinkDemo_autogen_timestamp_deps
+build QtMavlinkDemo.exe: CXX_EXECUTABLE_LINKER__QtMavlinkDemo_Debug CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.obj CMakeFiles/QtMavlinkDemo.dir/main.cpp.obj CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.obj CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.obj | D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Widgets.a D$:/study/dachuang/dachuang/QtDemo/QtMavlinkDemo/lib/libwiringPi.so D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Gui.a D$:/app/Qt/6.3.0/mingw_64/lib/libQt6Core.a || QtMavlinkDemo_autogen QtMavlinkDemo_autogen_timestamp_deps
   FLAGS = -g
-  LINK_LIBRARIES = D:/app/Qt/6.3.0/mingw_64/lib/libQt6Widgets.a  D:/app/Qt/6.3.0/mingw_64/lib/libQt6Gui.a  D:/app/Qt/6.3.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = D:/app/Qt/6.3.0/mingw_64/lib/libQt6Widgets.a  D:/study/dachuang/dachuang/QtDemo/QtMavlinkDemo/lib/libwiringPi.so  D:/app/Qt/6.3.0/mingw_64/lib/libQt6Gui.a  D:/app/Qt/6.3.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\QtMavlinkDemo.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -149,7 +149,7 @@ build QtMavlinkDemo_autogen/timestamp QtMavlinkDemo_autogen/mocs_compilation.cpp
 #############################################
 # Phony custom command for CMakeFiles\QtMavlinkDemo_autogen_timestamp_deps
 
-build CMakeFiles/QtMavlinkDemo_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/QtMavlinkDemo_autogen_timestamp_deps: phony D$:/app/Qt/6.3.0/mingw_64/bin/Qt6Core.dll D$:/app/Qt/6.3.0/mingw_64/./bin/uic.exe D$:/app/Qt/6.3.0/mingw_64/./bin/moc.exe D$:/app/Qt/6.3.0/mingw_64/bin/Qt6Widgets.dll
+build CMakeFiles/QtMavlinkDemo_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/QtMavlinkDemo_autogen_timestamp_deps: phony D$:/app/Qt/6.3.0/mingw_64/./bin/moc.exe D$:/app/Qt/6.3.0/mingw_64/bin/Qt6Widgets.dll D$:/app/Qt/6.3.0/mingw_64/./bin/uic.exe D$:/app/Qt/6.3.0/mingw_64/bin/Qt6Core.dll
 
 
 #############################################

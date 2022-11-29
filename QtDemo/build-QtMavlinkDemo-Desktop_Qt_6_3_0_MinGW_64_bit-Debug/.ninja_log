@@ -1,15 +1,17 @@
 # ninja log v5
-9	734	6731043072740630	QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
-9	734	6731043072740630	QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
-9	734	6731043072740630	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
-9	734	6731043072740630	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
-740	2589	6731043092972784	CMakeFiles/QtMavlinkDemo.dir/main.cpp.obj	9309e7ffce74e6e9
-737	2658	6731043093662089	CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.obj	d20e5a84a17b4e6f
-734	2679	6731043093872108	CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.obj	61ae7905937c80f5
-1907	2078	6731029378931072	QtMavlinkDemo.exe	6a8526366e535164
-744	2722	6731043094292306	CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.obj	bcb0d0ac27151ea
 5	251	6731051615747067	QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
 5	251	6731051615747067	QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
 5	251	6731051615747067	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
 5	251	6731051615747067	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
+740	2589	6731043092972784	CMakeFiles/QtMavlinkDemo.dir/main.cpp.obj	9309e7ffce74e6e9
 253	1847	6731051631701946	CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.obj	d20e5a84a17b4e6f
+734	2679	6731043093872108	CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.obj	61ae7905937c80f5
+1907	2078	6731029378931072	QtMavlinkDemo.exe	6a8526366e535164
+744	2722	6731043094292306	CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.obj	bcb0d0ac27151ea
+19	2682	6914260645823052	QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
+19	2682	6914260645823052	QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
+19	2682	6914260645823052	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/timestamp	c8dfb1f84dc0415a
+19	2682	6914260645823052	D:/study/dachuang/dachuang/QtDemo/build-QtMavlinkDemo-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/QtMavlinkDemo_autogen/mocs_compilation.cpp	c8dfb1f84dc0415a
+2701	4073	6914260665638449	CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.obj	bcb0d0ac27151ea
+2683	5416	6914260679078589	CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.obj	61ae7905937c80f5
+2695	5936	6914260684268604	CMakeFiles/QtMavlinkDemo.dir/main.cpp.obj	9309e7ffce74e6e9
