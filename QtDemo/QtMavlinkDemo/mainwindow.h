@@ -1,13 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#define CHARTSNAMESPACE_H
 
 #include <QMainWindow>
 #include <QTimer>
-#include <QtCharts/QChart>
+#include <QtCharts>
 #include <QtCharts/QChartView>
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QSplineSeries>
-#include <QRandomGenerator>
 #include <QPointF>
 
 extern float roll, pitch, yaw;
@@ -33,10 +33,10 @@ private:
     Ui::MainWindow *ui;
 
     QTimer* timer1;
-    QChart* chart1;
-    QValueAxis* axisX;
-    QValueAxis* axisY;
-    QList<QSplineSeries*> series;
+    QtCharts::QChart* chart1;
+    QtCharts::QValueAxis* axisX;
+    QtCharts::QValueAxis* axisY;
+    QList<QtCharts::QSplineSeries*> series;
 
     void UpdateSeriesData();
 };

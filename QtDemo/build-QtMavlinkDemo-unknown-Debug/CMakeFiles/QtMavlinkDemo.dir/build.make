@@ -143,8 +143,9 @@ QtMavlinkDemo: CMakeFiles/QtMavlinkDemo.dir/main.cpp.o
 QtMavlinkDemo: CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.o
 QtMavlinkDemo: CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.o
 QtMavlinkDemo: CMakeFiles/QtMavlinkDemo.dir/build.make
-QtMavlinkDemo: /usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2
 QtMavlinkDemo: /home/pi/dachuang/QtDemo/QtMavlinkDemo/lib/libwiringPi.so
+QtMavlinkDemo: /usr/lib/arm-linux-gnueabihf/libQt5Charts.so.5.7.1
+QtMavlinkDemo: /usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2
 QtMavlinkDemo: /usr/lib/arm-linux-gnueabihf/libQt5Gui.so.5.15.2
 QtMavlinkDemo: /usr/lib/arm-linux-gnueabihf/libQt5Core.so.5.15.2
 QtMavlinkDemo: CMakeFiles/QtMavlinkDemo.dir/link.txt

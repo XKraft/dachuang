@@ -13,6 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake"
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ModuleLocation.cmake"
+  "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Charts/Qt5ChartsConfig.cmake"
+  "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake"
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfig.cmake"
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
   "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"

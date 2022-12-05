@@ -192,6 +192,9 @@ QT_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:STRING=/usr/lib/qt5/bin/qmake
 
+//The directory containing a CMake configuration file for Qt5Charts.
+Qt5Charts_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Charts
+
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core
 
@@ -203,6 +206,9 @@ Qt5Widgets_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets
 
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5
+
+//The directory containing a CMake configuration file for Qt6.
+Qt6_DIR:PATH=Qt6_DIR-NOTFOUND
 
 //Value Computed by CMake
 QtMavlinkDemo_BINARY_DIR:STATIC=/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug

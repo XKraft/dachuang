@@ -26,7 +26,7 @@ int main()
     }
 
     //向飞控请求发送三个角度的数据
-    mavlink_msg_request_data_stream_pack(100, 200, &_msg, 1, MAV_COMP_ID_ALL, MAVLINK_MSG_ID_ATTITUDE, 200, 1);
+    mavlink_msg_request_data_stream_pack(100, 200, &_msg, 1, MAV_COMP_ID_ALL, MAV_DATA_STREAM_ALL, 200, 1);
 	BufSendLen = mavlink_msg_to_send_buffer(BufSend, &_msg);
     if(serial.WriteSerialBytes(BufSendLen, BufSend))
     {

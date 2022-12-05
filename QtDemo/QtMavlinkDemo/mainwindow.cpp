@@ -12,21 +12,21 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    chart1 = new QChart();
+    chart1 = new QtCharts::QChart();
     chart1->setTitle((QString)"数据曲线");
     ui->widget_2->setChart(chart1);
-    ui->widget_2->setRubberBand(QChartView::NoRubberBand);//矩形缩放
+    ui->widget_2->setRubberBand(QtCharts::QChartView::NoRubberBand);//矩形缩放
     ui->widget_2->setRenderHint(QPainter::Antialiasing);//抗锯齿
     ui->widget_2->show();
 
-    axisX = new QValueAxis;
+    axisX = new QtCharts::QValueAxis;
     axisX->setRange(0, 30);
     axisX->setLabelFormat(("%.2f"));
     axisX->setTitleText("时间/s");
     axisX->setGridLineVisible(false);
     axisX->setTickCount(2);
-    axisY = new QValueAxis;
-    axisY->setRange(0, 200);
+    axisY = new QtCharts::QValueAxis;
+    axisY->setRange(-180, 180);
     axisY->setLabelFormat(("%.2f"));
     axisY->setTitleText("角度/°");
 
@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     for(int i = 0; i < 3; ++i)
     {
-        QSplineSeries* s = new QSplineSeries(this);
+        QtCharts::QSplineSeries* s = new QtCharts::QSplineSeries(this);
         s->setName(QString(seriesname[i]));
         chart1->addSeries(s);
         s->attachAxis(axisX);//将数据与坐标轴绑定
@@ -80,7 +80,7 @@ void MainWindow::on_action_E_triggered()
 {
     timer1->stop();
     count = 0;
-    foreach(QSplineSeries* s, series)
+    foreach(QtCharts::QSplineSeries* s, series)
     {
         QVector<QPointF> v;
         s->replace(v);
@@ -94,7 +94,7 @@ void MainWindow::on_action_E_triggered()
 void MainWindow::UpdateSeriesData()
 {
     int i = 0;
-    foreach(QSplineSeries* s, series)
+    foreach(QtCharts::QSplineSeries* s, series)
     {
         if(s->isVisible())
         {
@@ -105,7 +105,7 @@ void MainWindow::UpdateSeriesData()
             else
             {
                 axisX->setRange((count - 1000) * 0.03, count * 0.03);
-                QVector<QPointF> v = s->points();
+                QList<QPointF> v = s->points();
                 v.append(QPointF(count * 0.03, AttitudeData[i] * 180 / 3.14159));
                 v.pop_front();
                 s->replace(v);

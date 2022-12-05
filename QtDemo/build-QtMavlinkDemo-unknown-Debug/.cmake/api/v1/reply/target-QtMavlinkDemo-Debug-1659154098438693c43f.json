@@ -36,6 +36,12 @@
 				"parent" : 0
 			},
 			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 66,
+				"parent" : 0
+			},
+			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 30,
@@ -74,6 +80,10 @@
 			"defines" : 
 			[
 				{
+					"backtrace" : 3,
+					"define" : "QT_CHARTS_LIB"
+				},
+				{
 					"backtrace" : 2,
 					"define" : "QT_CORE_LIB"
 				},
@@ -99,15 +109,15 @@
 					"path" : "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/QtMavlinkDemo_autogen/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"path" : "/home/pi/dachuang/QtDemo/QtMavlinkDemo/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/home/pi/dachuang/QtDemo/QtMavlinkDemo/include/c_library_v1-master/common"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/home/pi/dachuang/QtDemo/QtMavlinkDemo/include/WiringPi-master/wiringPi"
 				},
 				{
@@ -134,6 +144,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/usr/include/arm-linux-gnueabihf/qt5/QtCharts"
 				}
 			],
 			"language" : "CXX",
@@ -172,12 +187,17 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2",
+				"fragment" : "/home/pi/dachuang/QtDemo/QtMavlinkDemo/lib/libwiringPi.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/arm-linux-gnueabihf/libQt5Charts.so.5.7.1",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/home/pi/dachuang/QtDemo/QtMavlinkDemo/lib/libwiringPi.so",
+				"fragment" : "/usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2",
 				"role" : "libraries"
 			},
 			{
