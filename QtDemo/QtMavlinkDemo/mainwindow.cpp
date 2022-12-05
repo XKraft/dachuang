@@ -68,9 +68,9 @@ void MainWindow::on_action_triggered()
         AttitudeData[0] = roll;
         AttitudeData[1] = yaw;
         AttitudeData[2] = pitch;
-        ui->label_roll->setText((QString)"横滚角roll:" + QString::number(AttitudeData[0] * 180 / 3.14159) + (QString)"°");
-        ui->label_yaw->setText((QString)"偏航角yaw:" + QString::number(AttitudeData[1] * 180 / 3.14159) + (QString)"°");
-        ui->label_pitch->setText((QString)"俯仰角pitch:" + QString::number(AttitudeData[2] * 180 / 3.14159) + (QString)"°");
+        ui->label_roll->setText((QString)"环转角度:" + QString::number(AttitudeData[0] * 180 / 3.14159) + (QString)"°");
+        ui->label_yaw->setText((QString)"尺偏、桡偏角度:" + QString::number(AttitudeData[1] * 180 / 3.14159) + (QString)"°");
+        ui->label_pitch->setText((QString)"掌屈、背伸角度:" + QString::number(AttitudeData[2] * 180 / 3.14159) + (QString)"°");
         UpdateSeriesData();
     });
 }
@@ -86,9 +86,9 @@ void MainWindow::on_action_E_triggered()
         s->replace(v);
     }
     axisX->setRange(0, 30);
-    ui->label_roll->setText((QString)"横滚角roll:");
-    ui->label_yaw->setText((QString)"偏航角yaw:");
-    ui->label_pitch->setText((QString)"俯仰角pitch:");
+    ui->label_roll->setText((QString)"环转角度:");
+    ui->label_yaw->setText((QString)"尺偏、桡偏角度:");
+    ui->label_pitch->setText((QString)"掌屈、背伸角度:");
 }
 
 void MainWindow::UpdateSeriesData()

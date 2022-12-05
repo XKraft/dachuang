@@ -192,6 +192,9 @@ QT_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:STRING=/usr/lib/qt5/bin/qmake
 
+//The directory containing a CMake configuration file for Qt53dcore.
+Qt53dcore_DIR:PATH=Qt53dcore_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Qt5Charts.
 Qt5Charts_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Charts
 

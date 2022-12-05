@@ -4112,6 +4112,10 @@ qapplication.h
 qcommonstyle.h
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qcommonstyle.h
 
+/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame
+qframe.h
+/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h
+
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsView
 qgraphicsview.h
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicsview.h
@@ -5594,6 +5598,8 @@ QtCore/QVariant
 QtWidgets/QAction
 -
 QtWidgets/QApplication
+-
+QtWidgets/QFrame
 -
 QtWidgets/QHBoxLayout
 -

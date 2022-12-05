@@ -1042,6 +1042,18 @@
 			"value" : "/usr/lib/qt5/bin/qmake"
 		},
 		{
+			"name" : "Qt53dcore_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt53dcore."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Qt53dcore_DIR-NOTFOUND"
+		},
+		{
 			"name" : "Qt5Charts_DIR",
 			"properties" : 
 			[

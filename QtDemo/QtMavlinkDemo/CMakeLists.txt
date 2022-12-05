@@ -64,3 +64,5 @@ target_link_libraries(QtMavlinkDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${PRO
 
 find_package(Qt5 REQUIRED COMPONENTS Charts)
 target_link_libraries(QtMavlinkDemo PRIVATE Qt5::Charts)
+
+

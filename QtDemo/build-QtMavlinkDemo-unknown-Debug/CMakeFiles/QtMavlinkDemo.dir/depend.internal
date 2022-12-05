@@ -1284,6 +1284,7 @@ CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QAction
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QCommonStyle
+ /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsView
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsWidget
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QHBoxLayout
