@@ -56,22 +56,24 @@ public:
     QFrame *frame_2;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_2;
+    QLabel *label_hand;
     QWidget *widget_5;
     QHBoxLayout *horizontalLayout_3;
     QWidget *widget_6;
     QVBoxLayout *verticalLayout_5;
-    QLabel *label_6;
-    QLabel *label_5;
-    QLabel *label_4;
-    QLabel *label_9;
-    QLabel *label_10;
+    QLabel *label_roll_r;
+    QLabel *label_yaw_r;
+    QLabel *label_yaw_l;
+    QLabel *label_pitch_up;
+    QLabel *label_pitch_down;
     QWidget *widget_7;
     QVBoxLayout *verticalLayout_6;
-    QLabel *label_3;
-    QLabel *label_7;
-    QLabel *label_8;
-    QLabel *label_11;
-    QLabel *label_12;
+    QLabel *label_havedone2;
+    QLabel *label_havedone3;
+    QLabel *label_havedone4;
+    QLabel *label_havedone5;
+    QLabel *label_havedone6;
+    QLabel *label_tishi;
     QSpacerItem *verticalSpacer;
     QtCharts::QChartView *widget_2;
     QMenuBar *menubar;
@@ -201,38 +203,52 @@ public:
 
         verticalLayout_4->addWidget(label_2);
 
+        label_hand = new QLabel(frame_2);
+        label_hand->setObjectName(QString::fromUtf8("label_hand"));
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(50);
+        label_hand->setFont(font2);
+        label_hand->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_4->addWidget(label_hand);
+
         widget_5 = new QWidget(frame_2);
         widget_5->setObjectName(QString::fromUtf8("widget_5"));
         horizontalLayout_3 = new QHBoxLayout(widget_5);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, 0, -1, 4);
         widget_6 = new QWidget(widget_5);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
         verticalLayout_5 = new QVBoxLayout(widget_6);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        label_6 = new QLabel(widget_6);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        verticalLayout_5->setContentsMargins(-1, 0, -1, 0);
+        label_roll_r = new QLabel(widget_6);
+        label_roll_r->setObjectName(QString::fromUtf8("label_roll_r"));
 
-        verticalLayout_5->addWidget(label_6);
+        verticalLayout_5->addWidget(label_roll_r);
 
-        label_5 = new QLabel(widget_6);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_yaw_r = new QLabel(widget_6);
+        label_yaw_r->setObjectName(QString::fromUtf8("label_yaw_r"));
 
-        verticalLayout_5->addWidget(label_5);
+        verticalLayout_5->addWidget(label_yaw_r);
 
-        label_4 = new QLabel(widget_6);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_yaw_l = new QLabel(widget_6);
+        label_yaw_l->setObjectName(QString::fromUtf8("label_yaw_l"));
 
-        verticalLayout_5->addWidget(label_4);
+        verticalLayout_5->addWidget(label_yaw_l);
 
-        label_9 = new QLabel(widget_6);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_pitch_up = new QLabel(widget_6);
+        label_pitch_up->setObjectName(QString::fromUtf8("label_pitch_up"));
 
-        verticalLayout_5->addWidget(label_9);
+        verticalLayout_5->addWidget(label_pitch_up);
 
-        label_10 = new QLabel(widget_6);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_pitch_down = new QLabel(widget_6);
+        label_pitch_down->setObjectName(QString::fromUtf8("label_pitch_down"));
 
-        verticalLayout_5->addWidget(label_10);
+        verticalLayout_5->addWidget(label_pitch_down);
 
 
         horizontalLayout_3->addWidget(widget_6);
@@ -241,30 +257,31 @@ public:
         widget_7->setObjectName(QString::fromUtf8("widget_7"));
         verticalLayout_6 = new QVBoxLayout(widget_7);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        label_3 = new QLabel(widget_7);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        verticalLayout_6->setContentsMargins(-1, 0, -1, 0);
+        label_havedone2 = new QLabel(widget_7);
+        label_havedone2->setObjectName(QString::fromUtf8("label_havedone2"));
 
-        verticalLayout_6->addWidget(label_3);
+        verticalLayout_6->addWidget(label_havedone2);
 
-        label_7 = new QLabel(widget_7);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_havedone3 = new QLabel(widget_7);
+        label_havedone3->setObjectName(QString::fromUtf8("label_havedone3"));
 
-        verticalLayout_6->addWidget(label_7);
+        verticalLayout_6->addWidget(label_havedone3);
 
-        label_8 = new QLabel(widget_7);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_havedone4 = new QLabel(widget_7);
+        label_havedone4->setObjectName(QString::fromUtf8("label_havedone4"));
 
-        verticalLayout_6->addWidget(label_8);
+        verticalLayout_6->addWidget(label_havedone4);
 
-        label_11 = new QLabel(widget_7);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_havedone5 = new QLabel(widget_7);
+        label_havedone5->setObjectName(QString::fromUtf8("label_havedone5"));
 
-        verticalLayout_6->addWidget(label_11);
+        verticalLayout_6->addWidget(label_havedone5);
 
-        label_12 = new QLabel(widget_7);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_havedone6 = new QLabel(widget_7);
+        label_havedone6->setObjectName(QString::fromUtf8("label_havedone6"));
 
-        verticalLayout_6->addWidget(label_12);
+        verticalLayout_6->addWidget(label_havedone6);
 
 
         horizontalLayout_3->addWidget(widget_7);
@@ -283,6 +300,19 @@ public:
 
 
         verticalLayout->addWidget(widget_3);
+
+        label_tishi = new QLabel(centralwidget);
+        label_tishi->setObjectName(QString::fromUtf8("label_tishi"));
+        sizePolicy.setHeightForWidth(label_tishi->sizePolicy().hasHeightForWidth());
+        label_tishi->setSizePolicy(sizePolicy);
+        QFont font3;
+        font3.setPointSize(16);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label_tishi->setFont(font3);
+        label_tishi->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(label_tishi);
 
         verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -324,7 +354,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\344\270\273\347\250\213\345\272\217", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\346\211\213\350\205\225\345\272\267\345\244\215\350\256\255\347\273\203\347\263\273\347\273\237", nullptr));
         action->setText(QCoreApplication::translate("MainWindow", "\345\274\200\345\247\213(&S)", nullptr));
 #if QT_CONFIG(shortcut)
         action->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
@@ -341,16 +371,18 @@ public:
         label_yaw->setText(QCoreApplication::translate("MainWindow", "\345\260\272\345\201\217\343\200\201\346\241\241\345\201\217\350\247\222\345\272\246:", nullptr));
         label_roll->setText(QCoreApplication::translate("MainWindow", "\347\216\257\350\275\254\350\247\222\345\272\246:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\345\272\267\345\244\215\350\256\255\347\273\203\350\256\241\345\210\222", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "\346\216\214\345\261\210\346\254\241\346\225\260:10", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "\350\203\214\344\274\270\346\254\241\346\225\260:10", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "\345\260\272\345\201\217\346\254\241\346\225\260:10", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "\346\241\241\345\201\217\346\254\241\346\225\260:10", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "\347\216\257\350\275\254\346\254\241\346\225\260:10", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_hand->setText(QCoreApplication::translate("MainWindow", "\345\275\223\345\211\215\345\272\267\345\244\215\350\256\255\347\273\203\344\270\272:\345\267\246\346\211\213", nullptr));
+        label_roll_r->setText(QCoreApplication::translate("MainWindow", "\347\216\257\350\275\254\346\254\241\346\225\260:10", nullptr));
+        label_yaw_r->setText(QCoreApplication::translate("MainWindow", "\345\260\272\345\201\217\346\254\241\346\225\260:10", nullptr));
+        label_yaw_l->setText(QCoreApplication::translate("MainWindow", "\346\241\241\345\201\217\346\254\241\346\225\260:10", nullptr));
+        label_pitch_up->setText(QCoreApplication::translate("MainWindow", "\346\216\214\345\261\210\346\254\241\346\225\260:10", nullptr));
+        label_pitch_down->setText(QCoreApplication::translate("MainWindow", "\350\203\214\344\274\270\346\254\241\346\225\260:10", nullptr));
+        label_havedone2->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_havedone3->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_havedone4->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_havedone5->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_havedone6->setText(QCoreApplication::translate("MainWindow", "\345\267\262\345\256\214\346\210\220:", nullptr));
+        label_tishi->setText(QCoreApplication::translate("MainWindow", "\350\257\267\347\202\271\345\207\273\"\351\200\211\351\241\271-\345\274\200\345\247\213\"\346\235\245\345\274\200\345\247\213\345\272\267\345\244\215\350\256\255\347\273\203", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\351\200\211\351\241\271", nullptr));
     } // retranslateUi
 

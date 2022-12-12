@@ -82,6 +82,11 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/pi/dachuang/QtDemo/QtMavlinkDemo/dialog.h",
+			"MU",
+			"EWIEGA46WW/moc_dialog.cpp"
+		],
+		[
 			"/home/pi/dachuang/QtDemo/QtMavlinkDemo/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp"
@@ -148,6 +153,7 @@
 	"SETTINGS_FILE" : "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/pi/dachuang/QtDemo/QtMavlinkDemo/dialog.cpp", "MU" ],
 		[ "/home/pi/dachuang/QtDemo/QtMavlinkDemo/main.cpp", "MU" ],
 		[ "/home/pi/dachuang/QtDemo/QtMavlinkDemo/mainwindow.cpp", "MU" ],
 		[ "/home/pi/dachuang/QtDemo/QtMavlinkDemo/myserial.cpp", "MU" ]

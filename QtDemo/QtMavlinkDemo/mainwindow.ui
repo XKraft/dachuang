@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>主程序</string>
+   <string>手腕康复训练系统</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -185,43 +185,73 @@
                  </widget>
                 </item>
                 <item>
+                 <widget class="QLabel" name="label_hand">
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>当前康复训练为:左手</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QWidget" name="widget_5" native="true">
                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>4</number>
+                   </property>
                    <item>
                     <widget class="QWidget" name="widget_6" native="true">
                      <layout class="QVBoxLayout" name="verticalLayout_5">
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
-                       <widget class="QLabel" name="label_6">
+                       <widget class="QLabel" name="label_roll_r">
                         <property name="text">
-                         <string>掌屈次数:10</string>
+                         <string>环转次数:10</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_5">
-                        <property name="text">
-                         <string>背伸次数:10</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_4">
+                       <widget class="QLabel" name="label_yaw_r">
                         <property name="text">
                          <string>尺偏次数:10</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_9">
+                       <widget class="QLabel" name="label_yaw_l">
                         <property name="text">
                          <string>桡偏次数:10</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_10">
+                       <widget class="QLabel" name="label_pitch_up">
                         <property name="text">
-                         <string>环转次数:10</string>
+                         <string>掌屈次数:10</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="label_pitch_down">
+                        <property name="text">
+                         <string>背伸次数:10</string>
                         </property>
                        </widget>
                       </item>
@@ -231,36 +261,42 @@
                    <item>
                     <widget class="QWidget" name="widget_7" native="true">
                      <layout class="QVBoxLayout" name="verticalLayout_6">
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
-                       <widget class="QLabel" name="label_3">
+                       <widget class="QLabel" name="label_havedone2">
                         <property name="text">
                          <string>已完成:</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_7">
+                       <widget class="QLabel" name="label_havedone3">
                         <property name="text">
                          <string>已完成:</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_8">
+                       <widget class="QLabel" name="label_havedone4">
                         <property name="text">
                          <string>已完成:</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_11">
+                       <widget class="QLabel" name="label_havedone5">
                         <property name="text">
                          <string>已完成:</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="label_12">
+                       <widget class="QLabel" name="label_havedone6">
                         <property name="text">
                          <string>已完成:</string>
                         </property>
@@ -282,6 +318,29 @@
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_tishi">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>请点击&quot;选项-开始&quot;来开始康复训练</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item>

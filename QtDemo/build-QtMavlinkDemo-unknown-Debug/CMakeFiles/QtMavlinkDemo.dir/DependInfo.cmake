@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/QtMavlinkDemo_autogen/mocs_compilation.cpp" "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.o"
+  "/home/pi/dachuang/QtDemo/QtMavlinkDemo/dialog.cpp" "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir/dialog.cpp.o"
   "/home/pi/dachuang/QtDemo/QtMavlinkDemo/main.cpp" "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir/main.cpp.o"
   "/home/pi/dachuang/QtDemo/QtMavlinkDemo/mainwindow.cpp" "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir/mainwindow.cpp.o"
   "/home/pi/dachuang/QtDemo/QtMavlinkDemo/myserial.cpp" "/home/pi/dachuang/QtDemo/build-QtMavlinkDemo-unknown-Debug/CMakeFiles/QtMavlinkDemo.dir/myserial.cpp.o"

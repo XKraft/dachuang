@@ -182,6 +182,33 @@ QtMavlinkDemo_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/QtMavlinkDemo_autogen/mocs_compilation.cpp.s
 .PHONY : QtMavlinkDemo_autogen/mocs_compilation.cpp.s
 
+dialog.o: dialog.cpp.o
+
+.PHONY : dialog.o
+
+# target to build an object file
+dialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/dialog.cpp.o
+.PHONY : dialog.cpp.o
+
+dialog.i: dialog.cpp.i
+
+.PHONY : dialog.i
+
+# target to preprocess a source file
+dialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/dialog.cpp.i
+.PHONY : dialog.cpp.i
+
+dialog.s: dialog.cpp.s
+
+.PHONY : dialog.s
+
+# target to generate assembly for a file
+dialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QtMavlinkDemo.dir/build.make CMakeFiles/QtMavlinkDemo.dir/dialog.cpp.s
+.PHONY : dialog.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -276,6 +303,9 @@ help:
 	@echo "... QtMavlinkDemo_autogen/mocs_compilation.o"
 	@echo "... QtMavlinkDemo_autogen/mocs_compilation.i"
 	@echo "... QtMavlinkDemo_autogen/mocs_compilation.s"
+	@echo "... dialog.o"
+	@echo "... dialog.i"
+	@echo "... dialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
