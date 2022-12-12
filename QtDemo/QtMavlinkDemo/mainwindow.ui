@@ -338,6 +338,8 @@
      <string>选项</string>
     </property>
     <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
     <addaction name="action_E"/>
    </widget>
    <addaction name="menu"/>
@@ -357,6 +359,16 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>设置训练计划</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>测试模式</string>
    </property>
   </action>
  </widget>

@@ -31,6 +31,8 @@ class Ui_MainWindow
 public:
     QAction *action;
     QAction *action_E;
+    QAction *action_2;
+    QAction *action_3;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
@@ -85,6 +87,10 @@ public:
         action->setObjectName(QString::fromUtf8("action"));
         action_E = new QAction(MainWindow);
         action_E->setObjectName(QString::fromUtf8("action_E"));
+        action_2 = new QAction(MainWindow);
+        action_2->setObjectName(QString::fromUtf8("action_2"));
+        action_3 = new QAction(MainWindow);
+        action_3->setObjectName(QString::fromUtf8("action_3"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -307,6 +313,8 @@ public:
 
         menubar->addAction(menu->menuAction());
         menu->addAction(action);
+        menu->addAction(action_2);
+        menu->addAction(action_3);
         menu->addAction(action_E);
 
         retranslateUi(MainWindow);
@@ -325,6 +333,8 @@ public:
 #if QT_CONFIG(shortcut)
         action_E->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+E", nullptr));
 #endif // QT_CONFIG(shortcut)
+        action_2->setText(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256\350\256\255\347\273\203\350\256\241\345\210\222", nullptr));
+        action_3->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225\346\250\241\345\274\217", nullptr));
         logo->setText(QCoreApplication::translate("MainWindow", "\346\211\213\350\205\225\345\272\267\345\244\215\350\256\255\347\273\203\347\263\273\347\273\237", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\345\275\223\345\211\215\346\211\213\350\205\225\345\274\257\346\233\262\345\247\277\346\200\201", nullptr));
         label_pitch->setText(QCoreApplication::translate("MainWindow", "\346\216\214\345\261\210\343\200\201\350\203\214\344\274\270\350\247\222\345\272\246:", nullptr));
