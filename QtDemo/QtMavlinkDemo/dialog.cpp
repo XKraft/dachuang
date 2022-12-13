@@ -20,9 +20,19 @@ Dialog::~Dialog()
 void Dialog::on_buttonBox_accepted()
 {
     if(ui->radioButton_l->isChecked())
+    {
         hand = 0;
+        train_des[0] = ui->lineEdit_roll_a->text().toFloat();
+        train_des[1] = ui->lineEdit_yaw_r_a->text().toFloat();
+        train_des[2] = -ui->lineEdit_yaw_l_a->text().toFloat();
+    }
     if(ui->radioButton_r->isChecked())
+    {
         hand = 1;
+        train_des[0] = -ui->lineEdit_roll_a->text().toFloat();
+        train_des[1] = -ui->lineEdit_yaw_r_a->text().toFloat();
+        train_des[2] = ui->lineEdit_yaw_l_a->text().toFloat();
+    }
 
     train_plan[0] = ui->lineEdit_roll_n->text().toInt();
     train_plan[1] = ui->lineEdit_yaw_r_n->text().toInt();
@@ -30,9 +40,8 @@ void Dialog::on_buttonBox_accepted()
     train_plan[3] = ui->lineEdit_pitch_up_n->text().toInt();
     train_plan[4] = ui->lineEdit_pitch_down_n->text().toInt();
 
-    train_des[0] = ui->lineEdit_roll_a->text().toFloat();
-    train_des[1] = ui->lineEdit_yaw_r_a->text().toFloat();
-    train_des[2] = -ui->lineEdit_yaw_l_a->text().toFloat();
+
+
     train_des[3] = ui->lineEdit_pitch_up_a->text().toFloat();
     train_des[4] = -ui->lineEdit_pitch_down_a->text().toFloat();
 
